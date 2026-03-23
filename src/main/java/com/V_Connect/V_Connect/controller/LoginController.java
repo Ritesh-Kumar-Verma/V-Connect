@@ -29,9 +29,11 @@ public class LoginController {
     }
 
 
-    @GetMapping("/btamujhe")
-    public ResponseEntity<String> btaMujhe(){
-        return new ResponseEntity<>("Ha kaam kr rha",HttpStatus.OK);
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody MyUser myUser){
+
+
+        return loginService.login(myUser);
     }
 
 
